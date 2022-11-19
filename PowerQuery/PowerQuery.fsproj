@@ -1,0 +1,63 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <OutputType>Library</OutputType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="Test.m" />
+    <None Include="lib\runtime\Microsoft.Data.Mashup.Preview.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="lib\runtime\Microsoft.Data.Mashup.ProviderCommon.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="lib\runtime\Microsoft.ApplicationInsights.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="lib\runtime\Microsoft.Mashup.EventSource.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="lib\runtime\Microsoft.Mashup.Shims.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="lib\runtime\Microsoft.Mashup.Container.NetFX40.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="lib\build\Microsoft.MashupEngine.dll" />
+    <None Include="lib\build\Microsoft.Data.Mashup.dll" />
+    <None Include="lib\build\Microsoft.Mashup.Tools.dll" />
+    <None Include="lib\build\Microsoft.Mashup.OAuth.dll" />
+
+    <Compile Include="PowerQuery.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Deedle" Version="2.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PowerQueryFSharp\src\Shared\Shared.fsproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Microsoft.Data.Mashup">
+      <HintPath>lib\build\Microsoft.Data.Mashup.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Mashup.Tools">
+      <HintPath>lib\build\Microsoft.Mashup.Tools.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.MashupEngine">
+      <HintPath>lib\build\Microsoft.MashupEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Mashup.OAuth">
+      <HintPath>lib\build\Microsoft.Mashup.OAuth.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="FSharp.Core" Version="5.0.1" />
+  </ItemGroup>
+
+</Project>
